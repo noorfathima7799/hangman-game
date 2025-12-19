@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="app-header">
+      <h1>Hangman Game</h1>
+      <p>Guess the hidden word</p>
+      <div class="status-bar">
+  ⏱ Time: <span id="time">0</span>s |
+  🪙 Coins: <span id="coins">10</span> |
+  🔥 Streak: <span id="streak">0</span>
+</div>
+
+    </div>
+
+    <div class="app-controls">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <div class="game-container">
+
+      <svg class="figure-container" height="200" width="150">
+        <!-- Stand -->
+        <line x1="20" y1="180" x2="120" y2="180" />
+        <line x1="40" y1="20" x2="40" y2="180" />
+        <line x1="40" y1="20" x2="100" y2="20" />
+        <line x1="100" y1="20" x2="100" y2="40" />
+
+        <!-- Body parts -->
+        <circle cx="100" cy="60" r="15" class="figure-part"/>
+        <line x1="100" y1="75" x2="100" y2="120" class="figure-part"/>
+        <line x1="100" y1="90" x2="80" y2="105" class="figure-part"/>
+        <line x1="100" y1="90" x2="120" y2="105" class="figure-part"/>
+        <line x1="100" y1="120" x2="80" y2="150" class="figure-part"/>
+        <line x1="100" y1="120" x2="120" y2="150" class="figure-part"/>
+      </svg>
+
+      <div class="wrong-letters-container">
+        <p>Wrong</p>
+        <span id="wrong-letters"></span>
+      </div>
+
+      <div class="word" id="word"></div>
+
+    </div>
+
+    <div class="app-footer">
+      <button id="play-button">Restart Game</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
